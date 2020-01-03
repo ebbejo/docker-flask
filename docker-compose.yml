@@ -11,6 +11,9 @@
 ### Run with: docker-compose up
 ###
 
+### Test with: browsing to http://localhost:5000/ - if using the app.py that comes with the seed commit, you should see
+### a simple Hello, world-style output
+
 version: '2'
 
 services:
