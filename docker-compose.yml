@@ -1,0 +1,27 @@
+### Docker-compose file for the Flask app container
+###
+### Build with:
+### docker-compose build
+
+### Instantiate a new app with:
+### mkdir ./app
+
+### *** ENSURE that you have an app.py in ./app
+###
+### Run with: docker-compose up
+###
+
+version: '2'
+
+services:
+  flask:
+    image: local/flask
+    build: .
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - ./app:/usr/src/app
+    
+    command: gunicorn --bind=0.0.0.0:5000 --chdir=/usr/src/app app:app
