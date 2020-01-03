@@ -26,4 +26,5 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 USER 1000
 
-CMD ["supervisord", "-c", "/etc/supervisord.conf"]
+ENV GUNICORN_CMD_ARGS="--bind=0.0.0.0 --chdir=/usr/src/app"
+CMD [ "gunicorn", "app:app" ]
