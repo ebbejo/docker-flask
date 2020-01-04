@@ -27,4 +27,4 @@ services:
     volumes:
       - ./app:/usr/src/app
     
-    command: gunicorn --bind=0.0.0.0:5000 --chdir=/usr/src/app app:app
+    command: gunicorn --bind=0.0.0.0:5000 --chdir=/usr/src/app --reload app:app
